@@ -1,6 +1,6 @@
 # Application-of-multimodal-digitalhuman-synthesis
 ## Usage
-- [x] **特定文本播报**
+- [x] **文本播报**
 - [ ] **数字人交互**
 - [ ] **新闻播报**
 - [ ] **数字人带货**
