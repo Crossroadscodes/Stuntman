@@ -45,17 +45,19 @@ function start() {
     var config = {
         sdpSemantics: 'unified-plan'
     };
-
+    /*
     if (document.getElementById('use-stun').checked) {
-        //config.iceServers = [{ urls: ['stun:stun.l.google.com:19302'] }];
-         config.iceServers = [{
+        config.iceServers = [{ urls: ['stun:stun.l.google.com:19302'] }];
+        
+    }
+    */
+    config.iceServers = [{
             //urls: 'stun:stun1.l.google.com:19302'
             urls: "turn:gitclone.com:3478",
             username: "webrtc",
             credential: "Webrtc987123654"
         }];
-    }
-
+    
     pc = new RTCPeerConnection(config);
 
     // connect audio / video

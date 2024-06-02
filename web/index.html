@@ -24,10 +24,7 @@
 </head>
 <body>
 
-<div class="option">
-    <input id="use-stun" type="checkbox"/>
-    <label for="use-stun">Use TURN server</label>
-</div>
+    
 <button id="start" onclick="start()">Start</button>
 <button id="stop" style="display: none" onclick="stop()">Stop</button>
 <form class="form-inline" id="echo-form">
@@ -36,7 +33,8 @@
 
       <textarea cols="2" rows="3" style="width:600px;height:50px;" class="form-control" id="message">test</textarea>
     </div>
-    <button type="submit" class="btn btn-default">Send</button>
+    <button type="submit" data-action="echo" class="btn btn-default">播报</button>
+    <button type="submit" data-action="chat" class="btn btn-default">回复</button>
   </form>
 
 <div id="media">
@@ -74,8 +72,20 @@
 	  $('#echo-form').on('submit', function(e) {
       e.preventDefault();
       var message = $('#message').val();
+      var action = $(this).find(':submit:focus').data('action'); 
       console.log('Sending: ' + message);
-      fetch('/human', {
+      if (action === 'echo') {
+            echo(message);
+      } else if (action === 'chat') {
+            chat(message);
+      }
+      });
+      //ws.send(message);
+      $('#message').val('');
+	  });
+     // 播报
+      function echo(message) {
+         fetch('/human', {
             body: JSON.stringify({
                 text: message,
                 type: 'echo',
@@ -84,10 +94,22 @@
                 'Content-Type': 'application/json'
             },
             method: 'POST'
-      });
-      //ws.send(message);
-      $('#message').val('');
-	  });
-	});
+         })
+      }
+
+      // 回复
+      function chat(message) {
+        fetch('/human', {
+            body: JSON.stringify({
+                text: message,
+                type: 'chat',
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST'
+        })
+      }
+        
 </script>
 </html>

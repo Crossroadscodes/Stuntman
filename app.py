@@ -158,11 +158,10 @@ def txt_to_audio(text_):
 
 
 def llm_response(message):
-    from llm.LLM import LLM
+    from tools.llm.ernine import chat
     # llm = LLM().init_model('Gemini', model_path= 'gemini-pro',api_key='Your API Key', proxy_url=None)
     # llm = LLM().init_model('ChatGPT', model_path= 'gpt-3.5-turbo',api_key='Your API Key')
-    llm = LLM().init_model('VllmGPT', model_path= 'THUDM/chatglm3-6b')
-    response = llm.chat(message)
+    response = chat(message,"6f6WQMFlDin13kUx6QUByUnB","vDplyUXy5XFapNMP2PF47KDyTf0IXX14")
     print(response)
     return response
 
@@ -272,24 +271,7 @@ async def post(url,data):
     except aiohttp.ClientError as e:
         print(f'Error: {e}')
 
-async def run(push_url):
-    pc = RTCPeerConnection()
-    pcs.add(pc)
 
-    @pc.on("connectionstatechange")
-    async def on_connectionstatechange():
-        print("Connection state is %s" % pc.connectionState)
-        if pc.connectionState == "failed":
-            await pc.close()
-            pcs.discard(pc)
-
-    player = HumanPlayer(nerfreal)
-    audio_sender = pc.addTrack(player.audio)
-    video_sender = pc.addTrack(player.video)
-
-    await pc.setLocalDescription(await pc.createOffer())
-    answer = await post(push_url,pc.localDescription.sdp)
-    await pc.setRemoteDescription(RTCSessionDescription(sdp=answer,type='answer'))
 ##########################################                                                    
 
 if __name__ == '__main__':
@@ -502,8 +484,7 @@ if __name__ == '__main__':
         loop.run_until_complete(runner.setup())
         site = web.TCPSite(runner, '0.0.0.0', opt.listenport)
         loop.run_until_complete(site.start())
-        if opt.transport=='rtcpush':
-            loop.run_until_complete(run(opt.push_url))
+     
         loop.run_forever()    
     Thread(target=run_server, args=(web.AppRunner(appasync),)).start()
 
