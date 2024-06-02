@@ -4,9 +4,10 @@
 - [x] **数字人交互**
 - [ ] **新闻播报**
 - [ ] **数字人带货**
+<div style="text-align: center;">
+  <img src="https://s2.loli.net/2024/06/02/sWr3HIxeJuOtLo9.gif" alt="obama gif" width="500">
+</div>     
 
-<img src="https://s2.loli.net/2024/06/02/sWr3HIxeJuOtLo9.gif" alt="obama gif" width="500">
-                                                                                      
 ## 1 Install
 Tested on Ubuntu 20.04, Python3.10, Pytorch 1.12 and CUDA 11.3
 ### 1.1 Clone the project
