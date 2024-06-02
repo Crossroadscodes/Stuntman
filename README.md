@@ -4,7 +4,7 @@
 - [x] **数字人交互**
 - [ ] **新闻播报**
 - [ ] **数字人带货**
-<iframe height=100 width=100 src="gif https://sm.ms/image/sWr3HIxeJuOtLo9">
+<iframe height=100 width=100 src="https://sm.ms/image/sWr3HIxeJuOtLo9">
 ## 1 Install
 Tested on Ubuntu 20.04, Python3.10, Pytorch 1.12 and CUDA 11.3
 ### 1.1 Clone the project
