@@ -5,8 +5,8 @@
 - [ ] **新闻播报**
 - [ ] **数字人带货**
 
-<iframe height=100 width=100 src="https://s2.loli.net/2024/06/02/sWr3HIxeJuOtLo9.gif">
-
+<iframe height=100 width=100 src="https://s2.loli.net/2024/06/02/sWr3HIxeJuOtLo9.gif"></iframe>
+                                                                                      
 ## 1 Install
 Tested on Ubuntu 20.04, Python3.10, Pytorch 1.12 and CUDA 11.3
 ### 1.1 Clone the project
