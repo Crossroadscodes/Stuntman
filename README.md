@@ -1,10 +1,11 @@
 # Application-of-multimodal-digitalhuman-synthesis
 ## Usage
 - [x] **文本播报**
-- [ ] **数字人交互**
+- [x] **数字人交互**
 - [ ] **新闻播报**
 - [ ] **数字人带货**
-## Install
+<iframe height=100 width=100 src="gif https://sm.ms/image/sWr3HIxeJuOtLo9">
+## 1 Install
 Tested on Ubuntu 20.04, Python3.10, Pytorch 1.12 and CUDA 11.3
 ### 1.1 Clone the project
 ```bash
@@ -21,7 +22,7 @@ pip install "git+https://github.com/facebookresearch/pytorch3d.git"
 pip install tensorflow-gpu==2.8.0
 pip install --upgrade "protobuf<=3.20.1"
 ```
-## Start
+## 2 Start
 ```bash
 export HF_ENDPOINT=https://hf-mirror.com
 python app.py --listenport 6006 --transport webrtc
