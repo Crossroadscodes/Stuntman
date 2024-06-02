@@ -4,7 +4,7 @@
 - [x] **数字人交互**
 - [ ] **新闻播报**
 - [ ] **数字人带货**
-<div style="text-align: center;">
+<div align=center>
   <img src="https://s2.loli.net/2024/06/02/sWr3HIxeJuOtLo9.gif" alt="obama gif" width="500">
 </div>     
 
