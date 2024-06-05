@@ -70,19 +70,18 @@
 	  // };
 
 	  $('#echo-form').on('submit', function(e) {
-      e.preventDefault();
-      var message = $('#message').val();
-      var action = $(this).find(':submit:focus').data('action'); 
-      console.log('Sending: ' + message);
-      if (action === 'echo') {
-            echo(message);
-      } else if (action === 'chat') {
-            chat(message);
-      }
-      });
-      //ws.send(message);
-      $('#message').val('');
-	  });
+          e.preventDefault();
+          var message = $('#message').val();
+          var action = $(this).find(':submit:focus').data('action'); 
+          console.log('Sending: ' + message);
+          if (action === 'echo') {
+                echo(message);
+          } else if (action === 'chat') {
+                chat(message);
+          }
+          $('#message').val('');
+       });
+     
      // 播报
       function echo(message) {
          fetch('/human', {
@@ -110,6 +109,6 @@
             method: 'POST'
         })
       }
-        
+    })
 </script>
 </html>
