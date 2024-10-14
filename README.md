@@ -12,8 +12,8 @@
 Tested on Ubuntu 20.04, Python3.10, Pytorch 1.12 and CUDA 11.3
 ### 1.1 Clone the project
 ```bash
-git clone https://github.com/Crossroadscodes/Realtime-digitalhuman-synthesis.git
-cd Application-of-multimodal-digitalhuman-synthesis
+git clone https://github.com/Crossroadscodes/Stuntman.git
+cd Stuntman
 ```
 ### 1.2 Install dependency
 ```bash
